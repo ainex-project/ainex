@@ -18,29 +18,37 @@ TODO-->
 
 ### Project Origin
 
-The project began when I ([@benvanik](https://twitter.com/benvanik)) was between
-jobs and wanted to hack on something fun. I'd picked up some region-locked
-Japanese games when I was visiting Tokyo and was frustrated I couldn't play them
-on my 360, so I started researching the 360 homebrew scene. I'd previously
-written a [PlayStation Portable emulator](https://code.google.com/p/pspplayer/)
-and enjoyed it, noticed no one was playing with a 360 emulator, and thought
-'what the hell'. Since then it's been an on-again off-again project done in my
-spare time when bored (or when [@gibbed](https://twitter.com/gibbed) has some
-time and gets me excited).
+The project was forked after [Rick](https://twitter.com/gibbed) suggested that if Xenia did not meet
+[Caroline](https://twitter.com/ha1otroop2288)'s standards, she should just fork the project.<br/>
+![image](https://user-images.githubusercontent.com/30361266/150946698-4cb01f66-a7c4-4aa7-a042-87e8b8cff364.png)<br/>
+At first the idea seemed silly. Of course she couldn't do it alone.
+The project would need lots of support from other contributors to work. But she gave it some thought.
+She heard multiple reports of contributors not being satisfied with the handling of the project,
+so she decided that it was worth an attempt after all.<br/>
+Caroline would start the project immediately and see whether it caught on.
 
 ### Why?
 
-Because it's fun!
+Because the contributors of this project deserve better handling.
+Better ability to affect the outcome of decisions, more engagement with pull requests, and faster resolution.
 
 ### Future Plans
 
-None! There's a [roadmap](/roadmap/), but the project has largely achieved what
-I set out for it to do (waste time building something cool), and now is purely a
-passion project in my spare time. In addition to getting some of my favorite
-games to play I'm really just hacking to have fun.
+The future plans for the project will be discussed in the project's [Request For Comments](https://github.com/ainex-project/RFCs) repository.
+Merged RFCs are confirmed to be goals, while pull requests are used for discussion.
 
-## Team
+## Top Contributors
 
-Contributors can be seen [here on GitHub](https://github.com/xenia-project/xenia/graphs/contributors).
+Contributors can be seen [here on GitHub](https://github.com/ainex-project/ainex/graphs/contributors).
 
-<!--TODO: auto generate a list from API.-->
+## All Contributors
+
+[Emoji key](https://github.com/all-contributors/all-contributors#emoji-key)
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
