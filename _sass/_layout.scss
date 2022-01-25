@@ -1,11 +1,41 @@
 body {
+  background-color: black !important;
+  color: white;
   width: 100%;
   min-height: 100%;
   margin: 0;
 }
 
+code {
+  background-color: slategray;
+  color: lightgray;
+}
+
 a {
+  color: royalblue;
   font-weight: 300;
+}
+
+
+.site-layout .site-navigation .mdl-navigation__link, nav, .site-navigation {
+    background-color: #151515 !important;
+}
+
+.site-layout .site-navigation .mdl-navigation__link.selected {
+    background-color: darkslategray !important;
+    color: white;
+}
+
+.site-drawer-subheader {
+    color: white;
+}
+
+.blink {
+    color: red;
+}
+
+.mdl-layout__header-row, .mdl-layout__drawer > .mdl-layout-title {
+    background-color: midnightblue !important;
 }
 
 .mdl-layout__container {
