@@ -9,16 +9,12 @@ exclude:
 - Gemfile
 - Gemfile.lock
 
-title: xenia
+title: Ainex
 description: >
-  xenia is a BSD licensed open source research project for emulating Xbox 360
-  games on modern PCs.
-baseurl:
-url: "https://xenia.jp"
-github_username:  xenia-project
-patreon_username: xenia_project
-twitter_username: xeniaproject
-discord_invite: Q9mxZf9
+  Ainex is a fork of Xenia, the BSD licensed open source research project
+  for emulating Xbox 360 games on modern PCs.
+url: "https://ainex-project.github.io/"
+github_username:  ainex-project
 
 markdown: kramdown
 
@@ -34,52 +30,43 @@ navigation:
       path: index.html
     - path: about.md
     - title: Quickstart
-      url: https://github.com/xenia-project/xenia/wiki/Quickstart
+      url: https://ainex-project.github.io/wiki/faq/quickstart
       icon: assignment
     - title: FAQ
-      url: https://github.com/xenia-project/xenia/wiki/faq
+      url: https://ainex-project.github.io/wiki/faq
       icon: help
     - path: download.md
     - title: Roadmap
-      url: https://github.com/xenia-project/xenia/wiki/roadmap
+      url: https://ainex-project.github.io/wiki/faq/roadmap
       icon: event
     - title: Compatibility
-      url: https://github.com/xenia-project/game-compatibility/issues
+      url: https://github.com/ainex-project/game-compatibility/issues
       icon: insert_chart
     - path: gallery.html
-  - title: Community
-    pages:
-    - title: Discord
-      url: https://discord.gg/Q9mxZf9
-      icon: message
-    - title: /r/xenia
-      url: https://www.reddit.com/r/xenia
-      icon: forum
-    - title: YouTube
-      url: https://www.youtube.com/channel/UC6bJhkUUHE18HVG2mpbygSQ
-      icon: videocam
-#    - title: "#xenia @ freenode"
-#      url: https://webchat.freenode.net/?channels=%23xenia
-#      icon: people
+# - title: Community
+#   pages:
+#   - title: Subreddit
+#     url: https://www.reddit.com/r/ainex
+#     icon: forum
+#   - title: YouTube
+#     url: https://www.youtube.com/channel/...
+#     icon: videocam
   - title: Development
     pages:
-    - title: Building
-      url: https://github.com/xenia-project/xenia/blob/master/docs/building.md
+    - title: Development Wiki
+      url: https://ainex-project.github.io/wiki/development/
       icon: build
     - title: Source Code
-      url: https://github.com/xenia-project/xenia
+      url: https://github.com/ainex-project/ainex
       icon: code
     - title: Issues
-      url: https://github.com/xenia-project/xenia/issues
+      url: https://github.com/ainex-project/ainex/issues
       icon: bug_report
-#    - title: Buildbot
-#      url: https://build.xenia.jp/waterfall
-#      icon: settings_system_daydream
 
-artifacts:
-  - title: Windows 7+ x64 (Direct3D 12 or Vulkan on Windows 10, Vulkan on Windows 7+)
-    icon: windows
-    branches:
-    - name: master
-      title: master
-      download_url: "https://github.com/xenia-project/release-builds-windows/releases/latest/download/xenia_master.zip"
+# artifacts:
+#   - title: Windows 7+ x64 (Direct3D 12 or Vulkan on Windows 10, Vulkan on Windows 7+)
+#     icon: windows
+#     branches:
+#     - name: main
+#       title: main
+#       download_url: ""

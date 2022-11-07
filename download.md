@@ -25,4 +25,4 @@ permalink: /download/
 
 Linux builds coming eventually...
 
-[System Requirements](https://github.com/xenia-project/xenia/wiki/Quickstart#system-requirements)
+[System Requirements](https://ainex-project.github.io/wiki/faq/quickstart/system_requirements/)
