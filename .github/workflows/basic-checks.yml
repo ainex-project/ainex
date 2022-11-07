@@ -28,6 +28,6 @@ jobs:
       uses: actions/checkout@v2.5.0
     - name: xenia-build
       run: |
-          xb setup # setup the project using Xenia Build
-          xb build # attempt to build the project using Xenia Build
-          xb format # make sure the formatting is correct, using Xenia Build
+          ./xb setup # setup the project using Xenia Build
+          ./xb build # attempt to build the project using Xenia Build
+          ./xb format # make sure the formatting is correct, using Xenia Build
