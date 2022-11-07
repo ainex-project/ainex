@@ -29,5 +29,5 @@ jobs:
     - name: xenia-build
       run: |
           ./xb setup # setup the project using Xenia Build
-          ./xb build # attempt to build the project using Xenia Build
+          ./xb build --config=Debug --target=src\xenia-app # attempt to build the project using Xenia Build
           ./xb format # make sure the formatting is correct, using Xenia Build
