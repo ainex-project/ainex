@@ -46,7 +46,7 @@ DEFINE_uint32(
     "Config");
 
 namespace config {
-std::string config_name = "xenia.config.toml";
+std::string config_name = "ainex.config.toml";
 std::filesystem::path config_folder;
 std::filesystem::path config_path;
 std::string game_config_suffix = ".config.toml";

@@ -132,7 +132,7 @@ using xe::ui::KeyEvent;
 using xe::ui::MenuItem;
 using xe::ui::UIEvent;
 
-const std::string kBaseTitle = "Xenia";
+const std::string kBaseTitle = "Ainex";
 
 EmulatorWindow::EmulatorWindow(Emulator* emulator,
                                ui::WindowedAppContext& app_context)
