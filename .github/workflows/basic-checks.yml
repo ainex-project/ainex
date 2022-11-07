@@ -23,6 +23,11 @@ jobs:
         arch: x64
         # Windows SDK to use
         sdk: 10.0.22000.0
-    - run: xb setup # setup the project using Xenia Build
-    - run: xb build # attempt to build the project using Xenia Build
-    - run: xb format # make sure the formatting is correct, using Xenia Build
+
+    - name: Checkout
+      uses: actions/checkout@v2.5.0
+    - name: xenia-build
+      run: |
+          xb setup # setup the project using Xenia Build
+          xb build # attempt to build the project using Xenia Build
+          xb format # make sure the formatting is correct, using Xenia Build
