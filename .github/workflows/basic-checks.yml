@@ -1,0 +1,28 @@
+name: Basic Checks
+on:
+  pull_request:
+    branches: [main] # run automatically for pull requests to main branch
+  push:
+    branches: [main] # run automatically for pushes to main branch
+  workflow_dispatch: # allow manual testing on all other branches
+
+jobs:
+  test-on-windows:
+    runs-on: windows-latest
+    steps:
+    - name: Setup Python
+      uses: actions/setup-python@v4.3.0
+      with:
+        python-version: 3.6
+        architecture: x64
+    - name: Setup MSVC Developer Command Prompt
+      # You may pin to the exact commit or the version.
+      uses: TheMrMilchmann/setup-msvc-dev@v2.0.0
+      with:
+        # The target architecture
+        arch: x64
+        # Windows SDK to use
+        sdk: 10.0.22000.0
+    - run: "./xb setup" # setup the project using Xenia Build
+    - run: "./xb build" # attempt to build the project using Xenia Build
+    - run: "./xb format" # make sure the formatting is correct, using Xenia Build
