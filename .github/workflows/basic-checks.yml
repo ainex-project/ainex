@@ -23,6 +23,6 @@ jobs:
         arch: x64
         # Windows SDK to use
         sdk: 10.0.22000.0
-    - run: "./xb setup" # setup the project using Xenia Build
-    - run: "./xb build" # attempt to build the project using Xenia Build
-    - run: "./xb format" # make sure the formatting is correct, using Xenia Build
+    - run: ./xb setup # setup the project using Xenia Build
+    - run: ./xb build # attempt to build the project using Xenia Build
+    - run: ./xb format # make sure the formatting is correct, using Xenia Build
