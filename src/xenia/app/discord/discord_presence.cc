@@ -11,6 +11,8 @@
 #include "third_party/discord-rpc/include/discord_rpc.h"
 #include "xenia/base/string.h"
 
+// TODO(halotroop2288): Remove Discord rich presence in favor of Revolt rich presence.
+// There is not yet a C++ API for Revolt.
 namespace xe {
 namespace discord {
 
@@ -27,7 +29,7 @@ void DiscordPresence::Initialize() {
   handlers.joinGame = &HandleDiscordJoinGame;
   handlers.joinRequest = &HandleDiscordJoinRequest;
   handlers.spectateGame = &HandleDiscordSpectateGame;
-  Discord_Initialize("606840046649081857", &handlers, 0, "");
+  // Discord_Initialize("606840046649081857", &handlers, 0, ""); // Ainex does not have an official Discord app ID.
 }
 
 void DiscordPresence::NotPlaying() {
