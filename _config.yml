@@ -32,10 +32,12 @@ navigation:
     - title: Quickstart
       url: https://ainex-project.github.io/wiki/faq/quickstart
       icon: assignment
+    - title: Download
+      url: https://github.com/ainex-project/ainex
+      icon: file_download
     - title: FAQ
       url: https://ainex-project.github.io/wiki/faq
       icon: help
-    - path: download.md
     - title: Roadmap
       url: https://ainex-project.github.io/wiki/faq/roadmap
       icon: event
