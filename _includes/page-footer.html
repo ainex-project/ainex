@@ -2,16 +2,6 @@
   <div class="wrapper">
 
     <div class="footer-col-wrapper">
-      <!--
-      - TODO: Tips!
-      <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li><div class="changetip_tipme_button" data-bid="5b12652c-299f-4825-b5fd-b9148865c194" data-uid="fd96d314a2884e28882b1f1e3c2078a7"></div></li>
-          <li><a href="https://www.bountysource.com/teams/xenia-project"><img src="https://img.shields.io/bountysource/team/xenia-project/activity.svg"></a></li>
-        </ul>
-      </div>
-      -->
-
       <div class="footer-col  footer-col-1">
         <ul class="social-media-list">
           {% if site.github_username %}
@@ -42,9 +32,9 @@
           </li>
           {% endif %}
 
-          {% if site.twitter_username %}
+          {% if site.mastodon_username %}
           <li>
-            <a href="https://twitter.com/{{ site.twitter_username }}">
+            <a href="https://mastodon.social/{{ site.mastodon_username }}">
               <span class="icon  icon--twitter">
                 <svg viewBox="0 0 16 16">
                   <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
@@ -52,21 +42,21 @@
                 </svg>
               </span>
 
-              <span class="username">{{ site.twitter_username }}</span>
+              <span class="username">{{ site.mastodon_username }}</span>
             </a>
           </li>
           {% endif %}
 
-          {% if site.discord_invite %}
+          {% if site.revolt_invite %}
           <li>
-            <a href="https://discord.gg/{{ site.discord_invite }}">
+            <a href="https://rvlt.gg/{{ site.revolt_invite }}">
               <span class="icon  icon--discord">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 240">
                   <path d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/><path d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z"/>
                 </svg>
               </span>
 
-              <span>Xenia on Discord</span>
+              <span>Ainex on Revolt</span>
             </a>
           </li>
           {% endif %}
@@ -79,17 +69,15 @@
 
       <div class="footer-col footer-col-3">
         <p class="text">
-        xenia is an open source research project for emulating Xbox 360 games on
-        modern PCs. Code and content are covered under a <a href="https://github.com/xenia-project/xenia/blob/master/LICENSE" target="_top">BSD license</a>.
-        <a href="/about/#why">We build this for fun</a>.
+        Ainex is an open source research project for emulating Xbox 360 games on modern computers.
+        Code and content are covered under a <a href="https://github.com/ainex-project/ainex/blob/main/LICENSE" target="_top">BSD license</a>.
+        We build this for fun.
         </p>
         <p class="text">
         <strong class="blink">WARNING:</strong>
-        Anyone asking about or sharing information related to illegal activities
-        will be banned from Discord/GitHub/etc.
+        Anyone asking about or sharing information related to illegal activities will be banned from our Revolt, GitHub, etc.
         </p>
       </div>
     </div>
-
   </div>
 </footer>

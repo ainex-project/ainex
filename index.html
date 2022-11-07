@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Xbox 360 Research Emulator
+title: Xbox 360 Emulator
 nav_title: Home
 icon: home
 weight: 0
@@ -23,19 +23,16 @@ permalink: /
         </div>
         <div class="github-box-content">
           <p class="description">
-            <span>Xbox 360 Emulator Research Project </span> &mdash; <a href="https://github.com/xenia-project/xenia#readme">Read More</a>
+            <span>Xbox 360 Emulator</span> &mdash; <a href="https://github.com/ainex-project/ainex#readme">Read More</a>
           </p>
           <p class="link">
-            <a href="https://xenia.jp">https://xenia.jp</a>
+            <a href="https://ainex-project.github.io/">https://ainex-project.github.io/</a>
           </p>
         </div>
         <div class="github-box-download">
           <p class="updated" style="display:inline">
             Latest commit to the <strong>master</strong> branch on <span class="update-date">???</span>.
           </p>
-          <!--<a href="https://build.xenia.jp/waterfall" style="position: absolute; right: 10px; display: inline;">
-            <img id="buildStatusImage" src="" alt="Build Status" style="min-width: 84px; height: 18px; max-width: 100%; visibility: hidden;">
-          </a>-->
         </div>
       </div>
     </div>
@@ -76,17 +73,6 @@ permalink: /
 <script src="{{ site.baseurl }}/scripts/merged-github-underscore.js"></script>
 
 <script>
-  /*
-  // Build server can be slow, so do this async.
-  var buildStatusImage = document.getElementById('buildStatusImage');
-  var buildStatusLoader = new Image();
-  buildStatusLoader.src = 'https://build.xenia.jp/png?builder=auto-builds';
-  buildStatusLoader.onload = function() {
-    buildStatusImage.src = buildStatusLoader.src;
-    buildStatusImage.style.visibility = '';
-  };
-  */
-
   var repoDataString = localStorage.getItem('github-repo-info');
   if (!repoDataString) {
     // No cached data, fetch new.
@@ -104,7 +90,7 @@ permalink: /
 
   function fetchRepoData(callback) {
     var gh = new Github({});
-    var repoAdapter = gh.getRepo('xenia-project', 'xenia');
+    var repoAdapter = gh.getRepo('ainex-project', 'ainex');
     repoAdapter.show(function(err, repoData) {
       // Store with timestamp for expiration.
       repoData.__cache_time__ = Date.now();
