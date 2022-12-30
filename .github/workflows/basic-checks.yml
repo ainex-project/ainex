@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Setup Python
-      uses: actions/setup-python@v4.3.0
+      uses: actions/setup-python@v4.4.0
       with:
         python-version: 3.6
         architecture: x64
@@ -25,9 +25,9 @@ jobs:
         sdk: 10.0.22000.0
 
     - name: Checkout
-      uses: actions/checkout@v2.5.0
+      uses: actions/checkout@v2.6.0
     - name: xenia-build
       run: |
           ./xb setup # setup the project using Xenia Build
-          ./xb build --config=Debug --target=src\xenia-app # attempt to build the project using Xenia Build
+          ./xb build # attempt to build the project using Xenia Build
           ./xb format # make sure the formatting is correct, using Xenia Build
