@@ -63,6 +63,6 @@ jobs:
       uses: actions/upload-artifact@v3.1.1
       with:
         name: binaries
-        path: "build/bin/${{ runner.os }}/Release"
+        path: "build/bin/${{ runner.os }}/Release/*.exe"
         if-no-files-found: error
         
