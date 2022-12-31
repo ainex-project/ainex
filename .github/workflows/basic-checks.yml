@@ -27,6 +27,7 @@ jobs:
       uses: actions/cache@v3.2.2
       with:
         path: build
+        key: ${{ runner.os }}-binaries
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
       with:
