@@ -59,11 +59,18 @@ jobs:
           ./xb setup # setup the project
           ./xb build  --config=Release --target=src\xenia-app # attempt to build the project
 #          ./xb format # make sure the formatting is correct
-    - name: Upload Binary
-      uses: actions/upload-artifact@v3.1.1
-      with:
-        name: windows
-        path: "build/bin/${{ runner.os }}/Release/*.exe"
-        if-no-files-found: error
+#     - name: Upload Binary
+#       uses: actions/upload-artifact@v3.1.1
+#       with:
+#         name: windows
+#         path: "build/bin/${{ runner.os }}/Release/*.exe"
+#         if-no-files-found: error
     - name: Publish Release
-      uses: fnkr/github-action-ghr@v1.3
+      uses: marvinpinto/action-automatic-releases@v1.2.1
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        prerelease: true
+        files: |
+          README.md
+          LICENSE
+          build/bin/${{ runner.os }}/Release/*.exe
