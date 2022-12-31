@@ -65,13 +65,14 @@ jobs:
 #         name: windows
 #         path: "build/bin/${{ runner.os }}/Release/*.exe"
 #         if-no-files-found: error
-    - name: Publish Release
-      uses: marvinpinto/action-automatic-releases@v1.2.1
+    - name: Automatic Semver Release
+      uses: rui-costa/action-automatic-semver-releases@1.1.1
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        automatic_release_tag: ${{ runner.github_sha }}
-        prerelease: true
-        files: |
-          README.md
-          LICENSE
-          build/bin/${{ runner.os }}/Release/*.exe
+        # Secret token from GitHub
+        TOKEN: ${{ github.token }}
+        # Which version you want to increment? Use MAJOR, MINOR or PATCH
+        SEMVER: MINOR
+        # Add Labels. i.e final, alpha, rc
+        LABEL: ""
+        # Text to include as the changelog
+        NOTES: ""
