@@ -58,11 +58,11 @@ jobs:
       run: |
           ./xb setup # setup the project using Xenia Build
           ./xb build  --config=Release --target=src\xenia-app # attempt to build the project using Xenia Build
-          ./xb format # make sure the formatting is correct, using Xenia Build
+#          ./xb format # make sure the formatting is correct, using Xenia Build
     - name: Upload Binary
       uses: actions/upload-artifact@v3.1.1
       with:
         name: binaries
-        path: "build/bin/{{ runner.os }}/Release"
+        path: "build/bin/${{ runner.os }}/Release"
         if-no-files-found: error
         
