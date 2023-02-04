@@ -101,3 +101,9 @@ node_modules/.bin/
 /third_party/binutils/binutils*
 /third_party/vasm/
 /tools/shader-playground/*.dll
+/packages/Microsoft.Windows.CppWinRT.2.0.220531.1
+/xenia-uwp-app/Generated Files/winrt
+/xenia-uwp-app/Release
+/xenia-uwp-app/BundleArtifacts
+/xenia-uwp-app/x64/Release
+*.pfx

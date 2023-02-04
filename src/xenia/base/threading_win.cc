@@ -210,7 +210,7 @@ class Win32Event : public Win32Handle<Event> {
   ~Win32Event() override = default;
   void Set() override { SetEvent(handle_); }
   void Reset() override { ResetEvent(handle_); }
-  void Pulse() override { PulseEvent(handle_); }
+  void Pulse() override {/* PulseEvent(handle_);*/ }
 };
 
 std::unique_ptr<Event> Event::CreateManualResetEvent(bool initial_state) {

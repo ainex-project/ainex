@@ -11,7 +11,9 @@
 #include "xenia/base/platform_win.h"
 #include "xenia/base/string.h"
 #include "xenia/ui/file_picker.h"
-#include "xenia/ui/window_win.h"
+///#include "xenia/ui/window_win.h"
+
+#include <shobjidl.h>
 
 // Microsoft headers after platform_win.h.
 #include <wrl/client.h>
@@ -183,10 +185,10 @@ bool Win32FilePicker::Show(Window* parent_window) {
     return false;
   }
 
-  // Show the dialog modally.
-  hr = file_dialog->Show(
-      parent_window ? static_cast<const Win32Window*>(parent_window)->hwnd()
-                    : nullptr);
+  // Show the dialog modally. -todo xenia
+  //hr = file_dialog->Show(
+  //    parent_window ? static_cast<const Win32Window*>(parent_window)->hwnd()
+  //                  : nullptr);
   file_dialog->Unadvise(cookie);
   if (!SUCCEEDED(hr)) {
     return false;

@@ -84,10 +84,10 @@ void D3D12CommandProcessor::InitializeShaderStorage(
 void D3D12CommandProcessor::RequestFrameTrace(
     const std::filesystem::path& root_path) {
   // Capture with PIX if attached.
-  if (GetD3D12Provider().GetGraphicsAnalysis() != nullptr) {
-    pix_capture_requested_.store(true, std::memory_order_relaxed);
-    return;
-  }
+  //if (GetD3D12Provider().GetGraphicsAnalysis() != nullptr) {
+  //  pix_capture_requested_.store(true, std::memory_order_relaxed);
+  //  return;
+  //}
   CommandProcessor::RequestFrameTrace(root_path);
 }
 
@@ -2933,11 +2933,11 @@ bool D3D12CommandProcessor::BeginSubmission(bool is_guest_command) {
     pix_capturing_ =
         pix_capture_requested_.exchange(false, std::memory_order_relaxed);
     if (pix_capturing_) {
-      IDXGraphicsAnalysis* graphics_analysis =
-          GetD3D12Provider().GetGraphicsAnalysis();
-      if (graphics_analysis != nullptr) {
-        graphics_analysis->BeginCapture();
-      }
+      //IDXGraphicsAnalysis* graphics_analysis =
+      //    GetD3D12Provider().GetGraphicsAnalysis();
+      //if (graphics_analysis != nullptr) {
+      //  graphics_analysis->BeginCapture();
+      //}
     }
 
     primitive_processor_->BeginFrame();
@@ -3028,10 +3028,10 @@ bool D3D12CommandProcessor::EndSubmission(bool is_swap) {
   if (is_closing_frame) {
     // Close the capture after submitting.
     if (pix_capturing_) {
-      IDXGraphicsAnalysis* graphics_analysis = provider.GetGraphicsAnalysis();
-      if (graphics_analysis != nullptr) {
-        graphics_analysis->EndCapture();
-      }
+      //IDXGraphicsAnalysis* graphics_analysis = provider.GetGraphicsAnalysis();
+      //if (graphics_analysis != nullptr) {
+      //  graphics_analysis->EndCapture();
+      //}
       pix_capturing_ = false;
     }
     frame_open_ = false;

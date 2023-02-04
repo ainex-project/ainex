@@ -284,41 +284,42 @@ dword_result_t XamShowMessageBoxUI_entry(
     buttons.push_back(xe::to_utf8(button));
   }
 
+  // temporary changes to use the default option while imgui is broken on UWP
   X_RESULT result;
-  if (cvars::headless) {
+  //if (cvars::headless) {
     // Auto-pick the focused button.
     auto run = [result_ptr, active_button]() -> X_RESULT {
       *result_ptr = static_cast<uint32_t>(active_button);
       return X_ERROR_SUCCESS;
     };
     result = xeXamDispatchHeadless(run, overlapped);
-  } else {
-    // TODO(benvanik): setup icon states.
-    switch (flags & 0xF) {
-      case 0:
-        // config.pszMainIcon = nullptr;
-        break;
-      case 1:
-        // config.pszMainIcon = TD_ERROR_ICON;
-        break;
-      case 2:
-        // config.pszMainIcon = TD_WARNING_ICON;
-        break;
-      case 3:
-        // config.pszMainIcon = TD_INFORMATION_ICON;
-        break;
-    }
-    auto close = [result_ptr](MessageBoxDialog* dialog) -> X_RESULT {
-      *result_ptr = dialog->chosen_button();
-      return X_ERROR_SUCCESS;
-    };
-    const Emulator* emulator = kernel_state()->emulator();
-    ui::ImGuiDrawer* imgui_drawer = emulator->imgui_drawer();
-    result = xeXamDispatchDialog<MessageBoxDialog>(
-        new MessageBoxDialog(imgui_drawer, title, xe::to_utf8(text_ptr.value()),
-                             buttons, active_button),
-        close, overlapped);
-  }
+  //} else {
+  //  // TODO(benvanik): setup icon states.
+  //  switch (flags & 0xF) {
+  //    case 0:
+  //      // config.pszMainIcon = nullptr;
+  //      break;
+  //    case 1:
+  //      // config.pszMainIcon = TD_ERROR_ICON;
+  //      break;
+  //    case 2:
+  //      // config.pszMainIcon = TD_WARNING_ICON;
+  //      break;
+  //    case 3:
+  //      // config.pszMainIcon = TD_INFORMATION_ICON;
+  //      break;
+  //  }
+  //  auto close = [result_ptr](MessageBoxDialog* dialog) -> X_RESULT {
+  //    *result_ptr = dialog->chosen_button();
+  //    return X_ERROR_SUCCESS;
+  //  };
+  //  const Emulator* emulator = kernel_state()->emulator();
+  //  ui::ImGuiDrawer* imgui_drawer = emulator->imgui_drawer();
+  //  result = xeXamDispatchDialog<MessageBoxDialog>(
+  //      new MessageBoxDialog(imgui_drawer, title, xe::to_utf8(text_ptr.value()),
+  //                           buttons, active_button),
+  //      close, overlapped);
+  //}
   return result;
 }
 DECLARE_XAM_EXPORT1(XamShowMessageBoxUI, kUI, kImplemented);

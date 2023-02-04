@@ -65,9 +65,9 @@ std::unique_ptr<D3D12Provider> D3D12Provider::Create() {
 }
 
 D3D12Provider::~D3D12Provider() {
-  if (graphics_analysis_ != nullptr) {
-    graphics_analysis_->Release();
-  }
+  //if (graphics_analysis_ != nullptr) {
+  //  graphics_analysis_->Release();
+  //}
   if (direct_queue_ != nullptr) {
     direct_queue_->Release();
   }
@@ -227,7 +227,7 @@ bool D3D12Provider::Initialize() {
   }
 
   // Enable the debug layer.
-  bool debug = cvars::d3d12_debug;
+  bool debug = true;
   if (debug) {
     ID3D12Debug* debug_interface;
     if (SUCCEEDED(
@@ -475,7 +475,7 @@ bool D3D12Provider::Initialize() {
 
   // Get the graphics analysis interface, will silently fail if PIX is not
   // attached.
-  pfn_dxgi_get_debug_interface1_(0, IID_PPV_ARGS(&graphics_analysis_));
+  //pfn_dxgi_get_debug_interface1_(0, IID_PPV_ARGS(&graphics_analysis_));
 
   return true;
 }
