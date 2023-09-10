@@ -26,7 +26,6 @@
 #include <dwmapi.h>
 #include <shellapi.h>
 #include <shlwapi.h>
-#include <shobjidl.h>
 #include <tpcshrd.h>
 #include <windows.h>
 #include <windowsx.h>

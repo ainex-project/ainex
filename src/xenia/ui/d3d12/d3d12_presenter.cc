@@ -22,8 +22,11 @@
 #include "xenia/ui/d3d12/d3d12_util.h"
 #include "xenia/ui/surface_win.h"
 
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.Foundation.h>
+
 DEFINE_bool(
-    d3d12_allow_variable_refresh_rate_and_tearing, true,
+    d3d12_allow_variable_refresh_rate_and_tearing, false,
     "In fullscreen, allow using variable refresh rate on displays supporting "
     "it. On displays not supporting VRR, screen tearing may occur in certain "
     "cases.",
@@ -57,10 +60,11 @@ D3D12Presenter::~D3D12Presenter() {
 }
 
 Surface::TypeFlags D3D12Presenter::GetSupportedSurfaceTypes() const {
-  Surface::TypeFlags types = 0;
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_GAMES)
-  types |= Surface::kTypeFlag_Win32Hwnd;
-#endif
+  Surface::TypeFlags types = Surface::kTypeFlag_UWPCore;
+  // todo UWP
+//#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_GAMES)
+//  types |= Surface::kTypeFlag_Win32Hwnd;
+//#endif
   return types;
 }
 
@@ -311,6 +315,17 @@ D3D12Presenter::ConnectOrReconnectPaintingToSurfaceFromUIThread(
         // better, and nothing is presented for some reason.
         dxgi_factory->MakeWindowAssociation(surface_hwnd,
                                             DXGI_MWA_NO_ALT_ENTER);
+      } break;
+      case Surface::kTypeIndex_UWPCore: {
+        winrt::Windows::UI::Core::CoreWindow window =
+            winrt::Windows::UI::Core::CoreWindow::GetForCurrentThread();
+        ::IUnknown* abi = static_cast<::IUnknown*>(winrt::get_abi(window));
+        if (FAILED(dxgi_factory->CreateSwapChainForCoreWindow(
+                direct_queue, abi, &swap_chain_desc, nullptr,
+                &swap_chain_1))) {
+          XELOGE("D3D12Presenter: Failed to create a swap chain for the HWND");
+          return SurfacePaintConnectResult::kFailure;
+        }
       } break;
 #endif
       default:

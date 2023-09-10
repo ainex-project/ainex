@@ -39,8 +39,8 @@
 #if XE_PLATFORM_ANDROID
 #include <android/log.h>
 #elif XE_PLATFORM_WIN32
-// For MessageBox:
-#include "xenia/base/platform_win.h"
+// For MessageBox: uwp todo
+//#include "xenia/base/platform_win.h"
 #endif  // XE_PLATFORM
 
 #include "third_party/fmt/include/fmt/format.h"
