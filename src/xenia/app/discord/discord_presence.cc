@@ -1,8 +1,8 @@
 /**
 ******************************************************************************
-* Xenia : Xbox 360 Emulator Research Project                                 *
+* Ainex : Xbox 360 Emulator                                                  *
 ******************************************************************************
-* Copyright 2020 Ben Vanik. All rights reserved.                             *
+* Copyright 2022 Ainex Project. All rights reserved.                         *
 * Released under the BSD license - see LICENSE in the root for more details. *
 ******************************************************************************
 */
@@ -11,6 +11,8 @@
 #include "third_party/discord-rpc/include/discord_rpc.h"
 #include "xenia/base/string.h"
 
+// TODO(halotroop2288): Remove Discord rich presence in favor of Revolt rich presence.
+// There is not yet a C++ API for Revolt. Nor rich presence.
 namespace xe {
 namespace discord {
 
@@ -27,7 +29,7 @@ void DiscordPresence::Initialize() {
   handlers.joinGame = &HandleDiscordJoinGame;
   handlers.joinRequest = &HandleDiscordJoinRequest;
   handlers.spectateGame = &HandleDiscordSpectateGame;
-  Discord_Initialize("606840046649081857", &handlers, 0, "");
+  // Discord_Initialize("606840046649081857", &handlers, 0, ""); // Ainex does not have an official Discord app ID.
 }
 
 void DiscordPresence::NotPlaying() {
