@@ -1,0 +1,67 @@
+name: Basic Checks
+on:
+  pull_request:
+    branches: [main] # run automatically for pull requests to main branch
+    paths-ignore:
+      - '*.md'
+      - '*.yml'
+      - 'docs/**'
+      - '.clang-format'
+      - '.drone.star'
+      - '.gitattributes'
+      - '.gitignore'
+      - '.gdbinit'
+      - '.github/*_TEMPLATE/**'
+      - 'src/**/*_posix.*'
+      - 'src/**/*_linux.*'
+      - 'src/**/*_gnulinux.*'
+      - 'src/**/*_x11.*'
+      - 'src/**/*_gtk.*'
+      - 'src/**/*_android.*'
+      - 'src/**/*_mac.*'
+      - 'LICENSE'
+  push:
+    branches: [main] # run automatically for pushes to main branch
+    paths-ignore:
+      - '*.md'
+      - '*.yml'
+      - 'docs/**'
+      - '.clang-format'
+      - '.drone.star'
+      - '.gitattributes'
+      - '.gitignore'
+      - '.gdbinit'
+      - '.github/*_TEMPLATE/**'
+      - 'src/**/*_posix.*'
+      - 'src/**/*_linux.*'
+      - 'src/**/*_gnulinux.*'
+      - 'src/**/*_x11.*'
+      - 'src/**/*_gtk.*'
+      - 'src/**/*_android.*'
+      - 'src/**/*_mac.*'
+      - 'LICENSE'
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+    - name: Setup Python
+      uses: actions/setup-python@v4.4.0
+      with:
+        python-version: 3.6
+        architecture: x64
+    - name: Set up Visual Studio variables
+      uses: egor-tensin/vs-shell@v2
+    - name: Checkout
+      uses: actions/checkout@v2.6.0
+    - name: xenia-build
+      run: |
+          ./xb setup # setup the project
+          ./xb build  --config=Release --target=src\xenia-app # attempt to build the project
+#          ./xb format # make sure the formatting is correct
+    - name: Upload Binary
+      uses: actions/upload-artifact@v3.1.1
+      with:
+        name: windows
+        path: "build/bin/${{ runner.os }}/Release/*.exe"
+        if-no-files-found: error
