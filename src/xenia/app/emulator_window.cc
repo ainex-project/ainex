@@ -1,11 +1,11 @@
 /**
- ******************************************************************************
- * Xenia : Xbox 360 Emulator Research Project                                 *
- ******************************************************************************
- * Copyright 2022 Ben Vanik. All rights reserved.                             *
- * Released under the BSD license - see LICENSE in the root for more details. *
- ******************************************************************************
- */
+******************************************************************************
+* Ainex : Xbox 360 Emulator                                                  *
+******************************************************************************
+* Copyright 2022 Ainex Project. All rights reserved.                         *
+* Released under the BSD license - see LICENSE in the root for more details. *
+******************************************************************************
+*/
 
 #include "xenia/app/emulator_window.h"
 
@@ -132,7 +132,7 @@ using xe::ui::KeyEvent;
 using xe::ui::MenuItem;
 using xe::ui::UIEvent;
 
-const std::string kBaseTitle = "Xenia";
+const std::string kBaseTitle = "Ainex";
 
 EmulatorWindow::EmulatorWindow(Emulator* emulator,
                                ui::WindowedAppContext& app_context)

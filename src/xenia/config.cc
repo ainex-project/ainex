@@ -1,11 +1,11 @@
 /**
- ******************************************************************************
- * Xenia : Xbox 360 Emulator Research Project                                 *
- ******************************************************************************
- * Copyright 2020 Ben Vanik. All rights reserved.                             *
- * Released under the BSD license - see LICENSE in the root for more details. *
- ******************************************************************************
- */
+******************************************************************************
+* Ainex : Xbox 360 Emulator                                                  *
+******************************************************************************
+* Copyright 2022 Ainex Project. All rights reserved.                         *
+* Released under the BSD license - see LICENSE in the root for more details. *
+******************************************************************************
+*/
 
 #include "config.h"
 
@@ -46,7 +46,7 @@ DEFINE_uint32(
     "Config");
 
 namespace config {
-std::string config_name = "xenia.config.toml";
+std::string config_name = "ainex.config.toml";
 std::filesystem::path config_folder;
 std::filesystem::path config_path;
 std::string game_config_suffix = ".config.toml";
